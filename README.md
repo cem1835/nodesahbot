@@ -22,3 +22,7 @@ return [
 
 using with c3 
 `node index.js car=c3`
+
+
+Extra Note
+if you use a different version of chrome from me, you could change the ChromeExecPath in consts.js 
