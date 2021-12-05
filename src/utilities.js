@@ -12,5 +12,9 @@ export const utilities = {
         const date = new Date();
 
         return date.getFullYear() + "_" + (date.getMonth() + 1) + "_" + date.getDate() + "_" + date.getHours() + "_" + date.getMinutes();
+    },
+    getSahBotHtmlToNumber(price){
+        const str =price.replace("<div>","").replace("TL","").replace("</div>","").trim().replace(".","").replace(",","");
+        return parseInt(str);
     }
 };

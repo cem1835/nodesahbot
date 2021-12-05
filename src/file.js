@@ -4,15 +4,19 @@ export const fileOperations = {
 
     writeToFile(fileName, json) {
 
-        let fileExist = fs.existsSync(fileName);
-
         fs.writeFileSync(fileName, JSON.stringify(json))
 
     },
     readFile(fileName){
 
-        const data = fs.readFileSync(fileName,'utf8');
+        let fileExist = fs.existsSync(fileName);
 
-        return data;
+        if(fileExist){
+            const data = fs.readFileSync(fileName,'utf8');
+
+            return JSON.parse(data);
+        }
+
+        return [];
     }
 };
